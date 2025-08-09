@@ -33,8 +33,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             # In a real application, this data would be stored in a persistent ledger (e.g., DynamoDB)
             response = {
                 'message': 'Consent captured successfully',
-                'data': data,
-            }
+                'data': data,            }
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
