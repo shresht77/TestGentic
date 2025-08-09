@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DPDP Hotel Compliance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DPDP Hotel Compliance Portal</h1>
+      <p>
+        This is a simple proof‑of‑concept front end for capturing guest consent
+        and managing data lifecycle evidence in compliance with India’s Digital
+        Personal Data Protection Act.
+      </p>
+    </header>
+
+    <main>
+      <section class="consent">
+        <h2>Capture Consent</h2>
+        <p>
+          Use the form below to simulate collecting consent from a guest. In a
+          real deployment this would send the data to an API endpoint.
+        </p>
+        <form id="consentForm">
+          <div class="form-group">
+            <label for="guestName">Guest Name:</label>
+            <input type="text" id="guestName" name="guestName" required />
+          </div>
+          <div class="form-group">
+            <label for="guestEmail">Email Address:</label>
+            <input type="email" id="guestEmail" name="guestEmail" required />
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="consentCheckbox" required /> I agree
+              to the collection and use of my data in accordance with the
+              privacy policy.
+            </label>
+          </div>
+          <button type="submit">Submit Consent</button>
+        </form>
+        <div id="formStatus" class="status-message"></div>
+      </section>
+
+      <section class="evidence">
+        <h2>Evidence Log (Demo)</h2>
+        <p>
+          When the guest submits the consent form, a log entry will appear
+          below. This simulates the evidence ledger entry that would be stored
+          in DynamoDB/ledger services.
+        </p>
+        <ul id="evidenceList"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Hotel Compliance AI Prototype</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
